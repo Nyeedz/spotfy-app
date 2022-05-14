@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Christian Alex Fernandes Barbosa <chr.alexfb@gmail.com>",
   "scripts": {
-    "start": "webpack serve  --hot --open",
+    "start": "webpack serve  --hot",
     "build": "webpack --config webpack.config.js --mode production",
     "lint": "eslint ."
   },

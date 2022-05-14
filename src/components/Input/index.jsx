@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import './input.scss'
+import './input'
 
-const Input = () => {
+export const Input = () => {
   const [inputValue, setInputValue] = useState('')
 
   const onChange = (event) => {
@@ -11,19 +11,12 @@ const Input = () => {
   }
 
   return (
-    <form className="c-form">
-      <div>
-        <label htmlFor="music-search" />
-        <input
-          onChange={onChange}
-          type="text"
-          id="music-search"
-          name="music-search"
-          value={inputValue}
-        />
-      </div>
-    </form>
+    <input
+      onChange={onChange}
+      type="text"
+      id="music-search"
+      name="music-search"
+      value={inputValue}
+    />
   )
 }
-
-export default Input

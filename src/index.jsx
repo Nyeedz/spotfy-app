@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import App from './App'
-import './global.scss'
+import './global'
 
 const root = createRoot(document.querySelector('#root'))
 
