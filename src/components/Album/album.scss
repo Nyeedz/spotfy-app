@@ -1,0 +1,31 @@
+$b: '.album';
+
+#{$b} {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+
+  &__name {
+    color: #d8d8d8;
+    text-align: center;
+  }
+
+  &__image {
+    width: 170px;
+  }
+
+  &__artist-name {
+    color: #7c7c7c;
+    text-align: center;
+  }
+
+  &--big {
+    align-items: center;
+
+    #{$b}__image {
+      width: 300px;
+    }
+  }
+}

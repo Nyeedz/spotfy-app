@@ -1,22 +1,38 @@
+import { func } from 'prop-types'
 import { useState } from 'react'
 import './input'
 
-export const Input = () => {
+const Input = ({ onChangeValue }) => {
   const [inputValue, setInputValue] = useState('')
 
   const onChange = (event) => {
-    console.log(event)
+    const value = event.target.value
 
-    setInputValue(event.target.value)
+    setInputValue(value)
+    onChangeValue(value)
   }
 
   return (
-    <input
-      onChange={onChange}
-      type="text"
-      id="music-search"
-      name="music-search"
-      value={inputValue}
-    />
+    <div className="floating-input">
+      <label className="floating-input__label" htmlFor="search">
+        Busque por artistas, álbuns ou músicas
+      </label>
+      <input
+        onChange={onChange}
+        type="text"
+        id="search"
+        name="search"
+        value={inputValue}
+        className="floating-input__field"
+        placeholder="Comece a escrever..."
+        required
+      />
+    </div>
   )
 }
+
+Input.prototype = {
+  onChangeValue: func
+}
+
+export default Input

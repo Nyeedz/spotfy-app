@@ -1,10 +1,25 @@
-.c-form {
-  width: 100%;
-  margin-top: 32px;
+.floating-input {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
 
   &__label {
+    color: #989898;
   }
 
-  &__input {
+  &__field {
+    width: inherit;
+    background-color: transparent;
+    border-bottom: 1px solid #989898;
+    color: #989898;
+    height: 60px;
+    font-size: 48px;
+
+    &:focus {
+      outline: none;
+      border-color: #d8d8d8;
+      color: #d8d8d8;
+    }
   }
 }
