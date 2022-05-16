@@ -2,7 +2,7 @@ import Album from 'Components/Album'
 import Input from 'Components/Input'
 import config from 'Environment/config'
 import { useEffect, useState } from 'react'
-// import './albumsPage'
+import './albumsPage'
 
 const AlbumsPage = () => {
   const [albums, setAlbums] = useState([])
@@ -10,12 +10,13 @@ const AlbumsPage = () => {
   const [queryAlbum, setQueryAlbum] = useState(null)
   const [queryTracks, setQueryTracks] = useState(null)
 
+  const token =
+    'BQBDioDVRliLn03L9BYHsvTmh6O-HS9b6iG8ECumstn_yjwn2nPcNzekWAUEUnObwYGP81Ij1EmtbXdRkqKxDnQMmeMs_E_x2Io8tjytFtV_9s6i-QEIbf-agvTBik2_4iQAHI3AzkgvMKsERW7bKzXFmpROuvg2ufX0J8HX-Tn1FTENRcUdKFbfjYV1CfJ4pjb9Cdxj_qenPjLXGKoKzUP6E17ol9l8wnhnzK6y-6kaWTcFIbiHvbwA0nPit_mmYKf-rJBQeyfSg4otlaa8zA'
+
   const onChange = (e) => {
     clearTimeout(timeout)
-    const token =
-      'BQDaqb_dWgtGx8d1YEaXmRKVY5wlaeWYdJyhT0EE98PyNHeQx5zrqxsuVZLpCdQwBufhmwqElugQcCNmA3z2plYutA3E1PMyxufKknWzj05pLebMrKlr0IO522ZbXjeJiB8XWCpl5F-Wjj_NhpmqWt8tpJzwDVjhtAOMMXV5cyAomwHNXghjSQKa_LIZLh8Pi6mMlQ50Ps-ol5xG6LNKGzF_I9tAtbPVjTEUwmkzFy5Mp-IgqibXTg6hib9iEPWfD-FJJEIXmulJaVJgiV9Ogg'
 
-    if (e === '') {
+    if (e.length === 0) {
       setQueryAlbum(null)
       setQueryTracks(null)
     }
@@ -40,9 +41,6 @@ const AlbumsPage = () => {
   }
 
   useEffect(() => {
-    const token =
-      'BQDaqb_dWgtGx8d1YEaXmRKVY5wlaeWYdJyhT0EE98PyNHeQx5zrqxsuVZLpCdQwBufhmwqElugQcCNmA3z2plYutA3E1PMyxufKknWzj05pLebMrKlr0IO522ZbXjeJiB8XWCpl5F-Wjj_NhpmqWt8tpJzwDVjhtAOMMXV5cyAomwHNXghjSQKa_LIZLh8Pi6mMlQ50Ps-ol5xG6LNKGzF_I9tAtbPVjTEUwmkzFy5Mp-IgqibXTg6hib9iEPWfD-FJJEIXmulJaVJgiV9Ogg'
-
     fetch(`${config.baseUrl}/me/albums`, {
       headers: {
         Authorization: `Bearer ${token}`
@@ -62,14 +60,16 @@ const AlbumsPage = () => {
   return (
     <>
       <div className="container">
-        <form className="search-form">
-          <Input onChangeValue={onChange} />
-        </form>
+        <Input onChangeValue={onChange} />
 
         {queryAlbum && (
           <div className="search">
-            <h3 className="search__title">Álbums buscados recentemente</h3>
-            <div className="container container--search">
+            <h3 className="search__title">
+              {queryAlbum
+                ? 'Álbums buscados recentemente'
+                : 'Músicas buscados recentemente'}
+            </h3>
+            <div className="container container--grid">
               {queryAlbum.map((album) => {
                 return (
                   <Album
@@ -84,11 +84,14 @@ const AlbumsPage = () => {
             </div>
           </div>
         )}
-
-        {queryTracks && (
+        {queryAlbum && (
           <div className="search">
-            <h3 className="search__title">Músicas buscados recentemente</h3>
-            <div className="container container--search">
+            <h3 className="search__title">
+              {queryAlbum
+                ? 'Álbums buscados recentemente'
+                : 'Músicas buscados recentemente'}
+            </h3>
+            <div className="container container--grid">
               {queryTracks.map((track) => {
                 return (
                   <Album

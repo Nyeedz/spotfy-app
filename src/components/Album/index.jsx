@@ -7,7 +7,7 @@ const Album = ({ id, cover, artist, title }) => {
     <>
       <img className="album__image" src={cover} alt={title} />
       <span className="album__name">{title}</span>
-      <span className="album__artist-name">{artist}</span>`
+      <span className="album__artist-name">{artist}</span>
     </>
   )
   return id ? (
