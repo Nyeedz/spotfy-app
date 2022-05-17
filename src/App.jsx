@@ -1,17 +1,19 @@
-import SpotifyLogo from 'Images/logo.svg'
-import AlbumPage from 'Pages/AlbumPage'
-import AlbumsPage from 'Pages/AlbumsPage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import SpotifyLogo from '@images/logo.svg'
+import AlbumPage from '@pages/AlbumPage'
+import AlbumsPage from '@pages/AlbumsPage'
+import SpotifyCallback from '@pages/SpotifyCallback'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './styles/app'
 
 const App = () => (
-  <BrowserRouter>
+  <Router>
     <SpotifyLogo className="logo" />
     <Routes>
       <Route path="/" element={<AlbumsPage />} />
       <Route path="/album/:id" element={<AlbumPage />} />
+      <Route path="/callback" element={<SpotifyCallback />} />
     </Routes>
-  </BrowserRouter>
+  </Router>
 )
 
 export default App

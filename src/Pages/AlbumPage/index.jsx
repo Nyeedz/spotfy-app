@@ -1,6 +1,6 @@
-import Album from 'Components/Album'
-import config from 'Environment/config'
-import ArrowBack from 'Images/arrow-back.svg'
+import Album from '@components/Album'
+import config from '@environment/config'
+import ArrowBack from '@images/arrow-back.svg'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './albumPage'
@@ -18,7 +18,7 @@ const AlbumPage = () => {
 
   useEffect(() => {
     const token =
-      'BQBDioDVRliLn03L9BYHsvTmh6O-HS9b6iG8ECumstn_yjwn2nPcNzekWAUEUnObwYGP81Ij1EmtbXdRkqKxDnQMmeMs_E_x2Io8tjytFtV_9s6i-QEIbf-agvTBik2_4iQAHI3AzkgvMKsERW7bKzXFmpROuvg2ufX0J8HX-Tn1FTENRcUdKFbfjYV1CfJ4pjb9Cdxj_qenPjLXGKoKzUP6E17ol9l8wnhnzK6y-6kaWTcFIbiHvbwA0nPit_mmYKf-rJBQeyfSg4otlaa8zA'
+      'BQDrLDMI7g25y2uh80YPlnTPHpwWudzK33UT9x21Exk2uCBWXxcdor_51HA4zEYONaQBR41IUpsSJ48yxRy2Gfi-EsuJpC4CId0matS00WGZ8pkdiQ4VaB2vluEHXphdj4w2CdzIYKIHjJYcMJyRH_fUZCCjhwjiDKKbxcEha8Zr7RBxPw9aH1MIM8GDmStiWYXwIFuMRDIkdHHUE9NV7nr8QNlr3cvLmIkuRC2TEvo_KX3LDwpzZvGRWCdEnbL_fU3Xe6_hruENn9MfWqFssA'
 
     fetch(`${config.baseUrl}/albums/${id}`, {
       headers: {
