@@ -1,14 +1,18 @@
+import albumsReducer from '@redux/albumsSlice'
 import tokenReducer from '@redux/tokenSlice'
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-const preloadedState = JSON.parse(localStorage.getItem('reduxState'))
-  ? JSON.parse(localStorage.getItem('reduxState'))
-  : ''
+const reduxState = JSON.parse(localStorage.getItem('reduxState'))
+
+const preloadedState = reduxState ? reduxState : ''
+
+const rootReducer = combineReducers({
+  token: tokenReducer,
+  albums: albumsReducer
+})
 
 const store = configureStore({
-  reducer: {
-    token: tokenReducer
-  },
+  reducer: rootReducer,
   preloadedState
 })
 

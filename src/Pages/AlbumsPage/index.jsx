@@ -1,34 +1,41 @@
 import Album from '@components/Album'
 import Input from '@components/Input'
 import config from '@environment/config'
+import { setAlbums } from '@redux/albumsSlice'
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import './albumsPage'
 
 const AlbumsPage = () => {
-  const [albums, setAlbums] = useState([])
   const [timeout, setTimeOut] = useState(null)
   const [queryAlbum, setQueryAlbum] = useState(null)
   const [queryTracks, setQueryTracks] = useState(null)
   const [inputValue, setInputValue] = useState('')
 
-  const selector = useSelector((state) => state.token)
+  const tokenSelector = useSelector((state) => state.token)
+  const albumsSelector = useSelector((state) => state.albums)
 
-  useEffect(() => {
+  const dispatch = useDispatch()
+
+  const getAlbums = () => {
     fetch(`${config.baseUrl}/me/albums`, {
       headers: {
-        Authorization: `Bearer ${selector?.token}`
+        Authorization: `Bearer ${tokenSelector?.token}`
       }
     })
       .then((res) => res.json())
       .then((albums) => {
         const handleAlbums = albums.items.map((item) => item.album)
 
-        setAlbums(handleAlbums)
+        dispatch(setAlbums(handleAlbums))
       })
       .catch(() => {
         window.location.href = `https://accounts.spotify.com/authorize?client_id=${config.clientId}&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=${config.urlCallback}`
       })
+  }
+
+  useEffect(() => {
+    getAlbums()
   }, [])
 
   const onChange = (e) => {
@@ -44,7 +51,7 @@ const AlbumsPage = () => {
         setTimeout(() => {
           fetch(`${config.baseUrl}/search?q=${e}&type=album,track`, {
             headers: {
-              Authorization: `Bearer ${selector?.token}`
+              Authorization: `Bearer ${tokenSelector?.token}`
             }
           })
             .then((res) => res.json())
@@ -112,7 +119,7 @@ const AlbumsPage = () => {
 
         {(!queryAlbum || !queryTracks) && (
           <div className="container container--grid">
-            {albums.map((album) => {
+            {albumsSelector?.albums.map((album) => {
               return (
                 <Album
                   key={album.id}
