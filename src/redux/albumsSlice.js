@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const slice = createSlice({
   name: 'albums',
-  initialState: '',
+  initialState: [],
   reducers: {
     setAlbums(state, { payload }) {
       return { ...state, albums: payload }

@@ -2,19 +2,18 @@ import Album from '@components/Album'
 import Input from '@components/Input'
 import config from '@environment/config'
 import { setAlbums } from '@redux/albumsSlice'
+import { setTracks } from '@redux/tracksSlice'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './albumsPage'
 
 const AlbumsPage = () => {
   const [timeout, setTimeOut] = useState(null)
-  const [queryAlbum, setQueryAlbum] = useState(null)
-  const [queryTracks, setQueryTracks] = useState(null)
   const [inputValue, setInputValue] = useState('')
 
   const tokenSelector = useSelector((state) => state.token)
   const albumsSelector = useSelector((state) => state.albums)
-
+  const tracksSelector = useSelector((state) => state.tracks)
   const dispatch = useDispatch()
 
   const getAlbums = () => {
@@ -35,6 +34,7 @@ const AlbumsPage = () => {
   }
 
   useEffect(() => {
+    clearState()
     getAlbums()
   }, [])
 
@@ -43,9 +43,8 @@ const AlbumsPage = () => {
 
     if (e.length === 0) {
       clearState()
-    }
-
-    if (e) {
+      getAlbums()
+    } else {
       setInputValue(e)
       setTimeOut(
         setTimeout(() => {
@@ -56,8 +55,8 @@ const AlbumsPage = () => {
           })
             .then((res) => res.json())
             .then((res) => {
-              setQueryAlbum(res.albums.items)
-              setQueryTracks(res.tracks.items)
+              dispatch(setAlbums(res.albums.items))
+              dispatch(setTracks(res.tracks.items))
             })
         }, 600)
       )
@@ -65,8 +64,8 @@ const AlbumsPage = () => {
   }
 
   const clearState = () => {
-    setQueryAlbum(null)
-    setQueryTracks(null)
+    dispatch(setAlbums([]))
+    dispatch(setTracks([]))
     setInputValue('')
   }
 
@@ -75,7 +74,7 @@ const AlbumsPage = () => {
       <div className="container">
         <Input onChangeValue={onChange} />
 
-        {queryAlbum && (
+        {/* {queryAlbum && (
           <div className="search">
             <h3 className="search__title">
               Álbums encontrados para {`"${inputValue}"`}
@@ -94,15 +93,36 @@ const AlbumsPage = () => {
               })}
             </div>
           </div>
-        )}
+        )} */}
 
-        {queryTracks && (
+        <div className="container container--grid">
+          {inputValue !== '' && !timeout && (
+            <div className="search">
+              <h3 className="search__title">
+                Álbums encontrados para {`"${inputValue}"`}
+              </h3>
+            </div>
+          )}
+          {albumsSelector?.albums?.map((album) => {
+            return (
+              <Album
+                key={album.id}
+                id={album.id}
+                cover={album.images[0].url}
+                artist={album.artists[0].name}
+                title={album.name}
+              />
+            )
+          })}
+        </div>
+
+        {tracksSelector?.tracks?.length > 0 && (
           <div className="search">
             <h3 className="search__title">
               Músicas encontradas para {`"${inputValue}"`}
             </h3>
             <div className="container container--grid">
-              {queryTracks.map((track) => {
+              {tracksSelector.tracks.map((track) => {
                 return (
                   <Album
                     key={track.album.id}
@@ -114,22 +134,6 @@ const AlbumsPage = () => {
                 )
               })}
             </div>
-          </div>
-        )}
-
-        {(!queryAlbum || !queryTracks) && (
-          <div className="container container--grid">
-            {albumsSelector?.albums.map((album) => {
-              return (
-                <Album
-                  key={album.id}
-                  id={album.id}
-                  cover={album.images[0].url}
-                  artist={album.artists[0].name}
-                  title={album.name}
-                />
-              )
-            })}
           </div>
         )}
       </div>

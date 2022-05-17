@@ -23,6 +23,7 @@ $b: '.album';
 
   &--big {
     align-items: center;
+    cursor: default;
 
     #{$b}__image {
       width: 300px;
