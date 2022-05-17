@@ -2,6 +2,7 @@ import Album from '@components/Album'
 import config from '@environment/config'
 import ArrowBack from '@images/arrow-back.svg'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import './albumPage'
 
@@ -15,14 +16,12 @@ const AlbumPage = () => {
     const seconds = ((duration % 60000) / 1000).toFixed(0)
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
   }
+  const selector = useSelector((state) => state.token)
 
   useEffect(() => {
-    const token =
-      'BQDrLDMI7g25y2uh80YPlnTPHpwWudzK33UT9x21Exk2uCBWXxcdor_51HA4zEYONaQBR41IUpsSJ48yxRy2Gfi-EsuJpC4CId0matS00WGZ8pkdiQ4VaB2vluEHXphdj4w2CdzIYKIHjJYcMJyRH_fUZCCjhwjiDKKbxcEha8Zr7RBxPw9aH1MIM8GDmStiWYXwIFuMRDIkdHHUE9NV7nr8QNlr3cvLmIkuRC2TEvo_KX3LDwpzZvGRWCdEnbL_fU3Xe6_hruENn9MfWqFssA'
-
     fetch(`${config.baseUrl}/albums/${id}`, {
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${selector?.token}`
       }
     })
       .then((res) => res.json())

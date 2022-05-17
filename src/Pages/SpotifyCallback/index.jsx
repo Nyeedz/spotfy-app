@@ -10,8 +10,6 @@ const SpotifyCallback = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(`?${window.location.hash.slice(1)}`)
 
-    console.log(urlParams.get('access_token'))
-
     dispatch(setToken(urlParams.get('access_token')))
     navigate('/')
   }, [])

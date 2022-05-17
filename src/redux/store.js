@@ -2,6 +2,8 @@ import tokenReducer from '@redux/tokenSlice'
 import { configureStore } from '@reduxjs/toolkit'
 
 const preloadedState = JSON.parse(localStorage.getItem('reduxState'))
+  ? JSON.parse(localStorage.getItem('reduxState'))
+  : ''
 
 const store = configureStore({
   reducer: {

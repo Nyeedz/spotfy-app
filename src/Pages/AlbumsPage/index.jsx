@@ -51,7 +51,6 @@ const AlbumsPage = () => {
             .then((res) => {
               setQueryAlbum(res.albums.items)
               setQueryTracks(res.tracks.items)
-              console.log(res.tracks.items)
             })
         }, 600)
       )
