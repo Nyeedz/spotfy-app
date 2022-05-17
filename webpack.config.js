@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.jsx',
   mode: 'development',
   output: {
-    filename: 'bundle.[hash].js',
+    filename: 'bundle.[fullhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -27,7 +27,8 @@ module.exports = {
     }
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 3000
   },
   module: {
     rules: [
