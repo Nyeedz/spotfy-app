@@ -19,10 +19,11 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
     preferRelative: true,
     alias: {
-      Pages: path.resolve(__dirname + '/src/Pages/'),
-      Components: path.resolve(__dirname + '/src/Components/'),
-      Environment: path.resolve(__dirname + '/environment/'),
-      Images: path.resolve(__dirname + '/public/img/')
+      '@pages': path.resolve(__dirname + '/src/Pages'),
+      '@components': path.resolve(__dirname + '/src/Components'),
+      '@environment': path.resolve(__dirname + '/environment'),
+      '@images': path.resolve(__dirname + '/public/img'),
+      '@redux': path.resolve(__dirname + '/src/redux')
     }
   },
   devServer: {

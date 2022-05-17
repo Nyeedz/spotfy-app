@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add -D file-loader
+  C:\Program Files\nodejs\node.exe C:\Users\nyeedz\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\apache-maven-3.6.3\bin;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\nyeedz\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\mongodb\bin;D:\PostgresSQL\bin;E:\Git\cmd;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\nodejs\;C:\Users\nyeedz\.windows-build-tools\python27\;C:\Users\nyeedz\AppData\Local\Microsoft\WindowsApps;C:\Users\nyeedz\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\nyeedz\AppData\Local\GitHubDesktop\bin;C:\Users\nyeedz\AppData\Local\Microsoft\WindowsApps;C:\Users\nyeedz\AppData\Roaming\npm;E:\Git\mingw64\bin;E:\Git\usr\bin;E:\cmder\vendor\bin;E:\cmder\bin;E:\cmder
 
 Yarn version: 
   1.22.18
@@ -11,20 +11,15 @@ Node version:
   16.15.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com/npm/platform-ui/file-loader: Unauthenticated: request used expired credentials. Please renew your credentials.
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66138:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140883:22)
-      at Request.emit (node:events:527:28)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141855:10)
-      at Request.emit (node:events:527:28)
-      at Gunzip.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141777:12)
-      at Object.onceWrapper (node:events:641:28)
-      at Gunzip.emit (node:events:527:28)
-      at endReadableNT (node:internal/streams/readable:1345:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: E:\Desenvonvimento\xp-spotfy-challenge\package.json: Unexpected token } in JSON at position 547
+      at JSON.parse (<anonymous>)
+      at C:\Users\nyeedz\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\nyeedz\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\nyeedz\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -40,20 +35,24 @@ npm manifest:
     "license": "MIT",
     "dependencies": {
       "@babel/cli": "^7.17.10",
+      "@reduxjs/toolkit": "^1.8.1",
+      "install": "^0.13.0",
       "react": "^18.1.0",
-      "react-dom": "^18.1.0"
+      "react-dom": "^18.1.0",
+      "react-redux": "^8.0.1",
+      "react-router-dom": "^6.3.0",
     },
     "devDependencies": {
       "@babel/core": "^7.17.10",
       "@babel/preset-env": "^7.17.10",
       "@babel/preset-react": "^7.16.7",
+      "@svgr/webpack": "^6.2.1",
       "babel-loader": "^8.2.5",
       "css-loader": "^6.7.1",
       "eslint": "^8.14.0",
       "eslint-config-prettier": "^8.5.0",
       "eslint-plugin-prettier": "^4.0.0",
       "eslint-plugin-react": "^7.29.4",
-      "file-loader": "^6.2.0",
       "html-webpack-plugin": "^5.5.0",
       "node-sass": "^7.0.1",
       "prettier": "^2.6.2",
@@ -109,7 +108,7 @@ Lockfile:
     resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.17.10.tgz"
     integrity sha512-GZt/TCsG70Ms19gfZO1tM4CVnXsPgEPBCpJu+Qz3L0LUDsY5nZqFZglIoPC1kIYOtNBZlrnFT+klg12vFGZXrw==
   
-  "@babel/core@^7.17.10":
+  "@babel/core@^7.15.5", "@babel/core@^7.17.10":
     version "7.17.10"
     resolved "https://registry.npmjs.org/@babel/core/-/core-7.17.10.tgz"
     integrity sha512-liKoppandF3ZcBnIYFjfSDHZLKdLHGJRkoWtG8zQyGJBQfIYobpnVGI5+pLBNtS6psFLDzyq8+h5HiVljW9PNA==
@@ -601,6 +600,13 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.14.5"
   
+  "@babel/plugin-syntax-typescript@^7.16.7":
+    version "7.17.10"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.17.10.tgz#80031e6042cad6a95ed753f672ebd23c30933195"
+    integrity sha512-xJefea1DWXW09pW4Tm9bjwVlPDyYA2it3fWlmEjpYz6alPvTUjL0EOzNzI/FEOyI3r4/J7uVH5UqKgl1TQ5hqQ==
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.16.7"
+  
   "@babel/plugin-transform-arrow-functions@^7.16.7":
     version "7.16.7"
     resolved "https://registry.npmjs.org/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.16.7.tgz"
@@ -786,6 +792,13 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.16.7"
   
+  "@babel/plugin-transform-react-constant-elements@^7.14.5":
+    version "7.17.6"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@babel/plugin-transform-react-constant-elements/-/plugin-transform-react-constant-elements-7.17.6.tgz#6cc273c2f612a6a50cb657e63ee1303e5e68d10a"
+    integrity sha512-OBv9VkyyKtsHZiHLoSfCn+h6yU7YKX8nrs32xUmOa1SRSk+t03FosB6fBZ0Yz4BpD1WV7l73Nsad+2Tz7APpqw==
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.16.7"
+  
   "@babel/plugin-transform-react-display-name@^7.16.7":
     version "7.16.7"
     resolved "https://registry.npmjs.org/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.16.7.tgz"
@@ -869,6 +882,15 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.16.7"
   
+  "@babel/plugin-transform-typescript@^7.16.7":
+    version "7.16.8"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.16.8.tgz#591ce9b6b83504903fa9dd3652c357c2ba7a1ee0"
+    integrity sha512-bHdQ9k7YpBDO2d0NVfkj51DpQcvwIzIusJ7mEUaMlbZq3Kt/U47j24inXZHQ5MDiYpCs+oZiwnXyKedE8+q7AQ==
+    dependencies:
+      "@babel/helper-create-class-features-plugin" "^7.16.7"
+      "@babel/helper-plugin-utils" "^7.16.7"
+      "@babel/plugin-syntax-typescript" "^7.16.7"
+  
   "@babel/plugin-transform-unicode-escapes@^7.16.7":
     version "7.16.7"
     resolved "https://registry.npmjs.org/@babel/plugin-transform-unicode-escapes/-/plugin-transform-unicode-escapes-7.16.7.tgz"
@@ -884,7 +906,7 @@ Lockfile:
       "@babel/helper-create-regexp-features-plugin" "^7.16.7"
       "@babel/helper-plugin-utils" "^7.16.7"
   
-  "@babel/preset-env@^7.17.10":
+  "@babel/preset-env@^7.15.6", "@babel/preset-env@^7.17.10":
     version "7.17.10"
     resolved "https://registry.npmjs.org/@babel/preset-env/-/preset-env-7.17.10.tgz"
     integrity sha512-YNgyBHZQpeoBSRBg0xixsZzfT58Ze1iZrajvv0lJc70qDDGuGfonEnMGfWeSY0mQ3JTuCWFbMkzFRVafOyJx4g==
@@ -975,7 +997,7 @@ Lockfile:
       "@babel/types" "^7.4.4"
       esutils "^2.0.2"
   
-  "@babel/preset-react@^7.16.7":
+  "@babel/preset-react@^7.14.5", "@babel/preset-react@^7.16.7":
     version "7.16.7"
     resolved "https://registry.npmjs.org/@babel/preset-react/-/preset-react-7.16.7.tgz"
     integrity sha512-fWpyI8UM/HE6DfPBzD8LnhQ/OcH8AgTaqcqP2nGOXEUV+VKBR5JRN9hCk9ai+zQQ57vtm9oWeXguBCPNUjytgA==
@@ -987,7 +1009,16 @@ Lockfile:
       "@babel/plugin-transform-react-jsx-development" "^7.16.7"
       "@babel/plugin-transform-react-pure-annotations" "^7.16.7"
   
-  "@babel/runtime@^7.8.4":
+  "@babel/preset-typescript@^7.15.0":
+    version "7.16.7"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@babel/preset-typescript/-/preset-typescript-7.16.7.tgz#ab114d68bb2020afc069cd51b37ff98a046a70b9"
+    integrity sha512-WbVEmgXdIyvzB77AQjGBEyYPZx+8tTsO50XtfozQrkW8QB2rLJpH2lgx0TRw5EJrBxOZQ+wCcyPVQvS8tjEHpQ==
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.16.7"
+      "@babel/helper-validator-option" "^7.16.7"
+      "@babel/plugin-transform-typescript" "^7.16.7"
+  
+  "@babel/runtime@^7.12.1", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
     version "7.17.9"
     resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.17.9.tgz"
     integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
@@ -1019,7 +1050,7 @@ Lockfile:
       debug "^4.1.0"
       globals "^11.1.0"
   
-  "@babel/types@^7.16.0", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.17.0", "@babel/types@^7.17.10", "@babel/types@^7.4.4":
+  "@babel/types@^7.15.6", "@babel/types@^7.16.0", "@babel/types@^7.16.7", "@babel/types@^7.16.8", "@babel/types@^7.17.0", "@babel/types@^7.17.10", "@babel/types@^7.4.4":
     version "7.17.10"
     resolved "https://registry.npmjs.org/@babel/types/-/types-7.17.10.tgz"
     integrity sha512-9O26jG0mBYfGkUYCYZRnBwbVLd1UZOICEr2Em6InB6jVfsAv1GKgwXHmrSg+WFWDmeKTA6vyTZiN8tCSM5Oo3A==
@@ -1123,10 +1154,129 @@ Lockfile:
       mkdirp "^1.0.4"
       rimraf "^3.0.2"
   
+  "@reduxjs/toolkit@^1.8.1":
+    version "1.8.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@reduxjs/toolkit/-/toolkit-1.8.1.tgz#94ee1981b8cf9227cda40163a04704a9544c9a9f"
+    integrity sha512-Q6mzbTpO9nOYRnkwpDlFOAbQnd3g7zj7CtHAZWz5SzE5lcV97Tf8f3SzOO8BoPOMYBFgfZaqTUZqgGu+a0+Fng==
+    dependencies:
+      immer "^9.0.7"
+      redux "^4.1.2"
+      redux-thunk "^2.4.1"
+      reselect "^4.1.5"
+  
+  "@svgr/babel-plugin-add-jsx-attribute@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-6.0.0.tgz#bd6d1ff32a31b82b601e73672a789cc41e84fe18"
+    integrity sha512-MdPdhdWLtQsjd29Wa4pABdhWbaRMACdM1h31BY+c6FghTZqNGT7pEYdBoaGeKtdTOBC/XNFQaKVj+r/Ei2ryWA==
+  
+  "@svgr/babel-plugin-remove-jsx-attribute@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-remove-jsx-attribute/-/babel-plugin-remove-jsx-attribute-6.0.0.tgz#58654908beebfa069681a83332544b17e5237e89"
+    integrity sha512-aVdtfx9jlaaxc3unA6l+M9YRnKIZjOhQPthLKqmTXC8UVkBLDRGwPKo+r8n3VZN8B34+yVajzPTZ+ptTSuZZCw==
+  
+  "@svgr/babel-plugin-remove-jsx-empty-expression@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-remove-jsx-empty-expression/-/babel-plugin-remove-jsx-empty-expression-6.0.0.tgz#d06dd6e8a8f603f92f9979bb9990a1f85a4f57ba"
+    integrity sha512-Ccj42ApsePD451AZJJf1QzTD1B/BOU392URJTeXFxSK709i0KUsGtbwyiqsKu7vsYxpTM0IA5clAKDyf9RCZyA==
+  
+  "@svgr/babel-plugin-replace-jsx-attribute-value@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-replace-jsx-attribute-value/-/babel-plugin-replace-jsx-attribute-value-6.0.0.tgz#0b85837577b02c31c09c758a12932820f5245cee"
+    integrity sha512-88V26WGyt1Sfd1emBYmBJRWMmgarrExpKNVmI9vVozha4kqs6FzQJ/Kp5+EYli1apgX44518/0+t9+NU36lThQ==
+  
+  "@svgr/babel-plugin-svg-dynamic-title@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-svg-dynamic-title/-/babel-plugin-svg-dynamic-title-6.0.0.tgz#28236ec26f7ab9d486a487d36ae52d58ba15676f"
+    integrity sha512-F7YXNLfGze+xv0KMQxrl2vkNbI9kzT9oDK55/kUuymh1ACyXkMV+VZWX1zEhSTfEKh7VkHVZGmVtHg8eTZ6PRg==
+  
+  "@svgr/babel-plugin-svg-em-dimensions@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-svg-em-dimensions/-/babel-plugin-svg-em-dimensions-6.0.0.tgz#40267c5dea1b43c4f83a0eb6169e08b43d8bafce"
+    integrity sha512-+rghFXxdIqJNLQK08kwPBD3Z22/0b2tEZ9lKiL/yTfuyj1wW8HUXu4bo/XkogATIYuXSghVQOOCwURXzHGKyZA==
+  
+  "@svgr/babel-plugin-transform-react-native-svg@^6.0.0":
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-transform-react-native-svg/-/babel-plugin-transform-react-native-svg-6.0.0.tgz#eb688d0a5f539e34d268d8a516e81f5d7fede7c9"
+    integrity sha512-VaphyHZ+xIKv5v0K0HCzyfAaLhPGJXSk2HkpYfXIOKb7DjLBv0soHDxNv6X0vr2titsxE7klb++u7iOf7TSrFQ==
+  
+  "@svgr/babel-plugin-transform-svg-component@^6.2.0":
+    version "6.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-plugin-transform-svg-component/-/babel-plugin-transform-svg-component-6.2.0.tgz#7ba61d9fc1fb42b0ba1a04e4630019fa7e993c4f"
+    integrity sha512-bhYIpsORb++wpsp91fymbFkf09Z/YEKR0DnFjxvN+8JHeCUD2unnh18jIMKnDJTWtvpTaGYPXELVe4OOzFI0xg==
+  
+  "@svgr/babel-preset@^6.2.0":
+    version "6.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/babel-preset/-/babel-preset-6.2.0.tgz#1d3ad8c7664253a4be8e4a0f0e6872f30d8af627"
+    integrity sha512-4WQNY0J71JIaL03DRn0vLiz87JXx0b9dYm2aA8XHlQJQoixMl4r/soYHm8dsaJZ3jWtkCiOYy48dp9izvXhDkQ==
+    dependencies:
+      "@svgr/babel-plugin-add-jsx-attribute" "^6.0.0"
+      "@svgr/babel-plugin-remove-jsx-attribute" "^6.0.0"
+      "@svgr/babel-plugin-remove-jsx-empty-expression" "^6.0.0"
+      "@svgr/babel-plugin-replace-jsx-attribute-value" "^6.0.0"
+      "@svgr/babel-plugin-svg-dynamic-title" "^6.0.0"
+      "@svgr/babel-plugin-svg-em-dimensions" "^6.0.0"
+      "@svgr/babel-plugin-transform-react-native-svg" "^6.0.0"
+      "@svgr/babel-plugin-transform-svg-component" "^6.2.0"
+  
+  "@svgr/core@^6.2.1":
+    version "6.2.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/core/-/core-6.2.1.tgz#195de807a9f27f9e0e0d678e01084b05c54fdf61"
+    integrity sha512-NWufjGI2WUyrg46mKuySfviEJ6IxHUOm/8a3Ph38VCWSp+83HBraCQrpEM3F3dB6LBs5x8OElS8h3C0oOJaJAA==
+    dependencies:
+      "@svgr/plugin-jsx" "^6.2.1"
+      camelcase "^6.2.0"
+      cosmiconfig "^7.0.1"
+  
+  "@svgr/hast-util-to-babel-ast@^6.2.1":
+    version "6.2.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/hast-util-to-babel-ast/-/hast-util-to-babel-ast-6.2.1.tgz#ae065567b74cbe745afae617053adf9a764bea25"
+    integrity sha512-pt7MMkQFDlWJVy9ULJ1h+hZBDGFfSCwlBNW1HkLnVi7jUhyEXUaGYWi1x6bM2IXuAR9l265khBT4Av4lPmaNLQ==
+    dependencies:
+      "@babel/types" "^7.15.6"
+      entities "^3.0.1"
+  
+  "@svgr/plugin-jsx@^6.2.1":
+    version "6.2.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/plugin-jsx/-/plugin-jsx-6.2.1.tgz#5668f1d2aa18c2f1bb7a1fc9f682d3f9aed263bd"
+    integrity sha512-u+MpjTsLaKo6r3pHeeSVsh9hmGRag2L7VzApWIaS8imNguqoUwDq/u6U/NDmYs/KAsrmtBjOEaAAPbwNGXXp1g==
+    dependencies:
+      "@babel/core" "^7.15.5"
+      "@svgr/babel-preset" "^6.2.0"
+      "@svgr/hast-util-to-babel-ast" "^6.2.1"
+      svg-parser "^2.0.2"
+  
+  "@svgr/plugin-svgo@^6.2.0":
+    version "6.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/plugin-svgo/-/plugin-svgo-6.2.0.tgz#4cbe6a33ccccdcae4e3b63ded64cc1cbe1faf48c"
+    integrity sha512-oDdMQONKOJEbuKwuy4Np6VdV6qoaLLvoY86hjvQEgU82Vx1MSWRyYms6Sl0f+NtqxLI/rDVufATbP/ev996k3Q==
+    dependencies:
+      cosmiconfig "^7.0.1"
+      deepmerge "^4.2.2"
+      svgo "^2.5.0"
+  
+  "@svgr/webpack@^6.2.1":
+    version "6.2.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@svgr/webpack/-/webpack-6.2.1.tgz#ef5d51c1b6be4e7537fb9f76b3f2b2e22b63c58d"
+    integrity sha512-h09ngMNd13hnePwgXa+Y5CgOjzlCvfWLHg+MBnydEedAnuLRzUHUJmGS3o2OsrhxTOOqEsPOFt5v/f6C5Qulcw==
+    dependencies:
+      "@babel/core" "^7.15.5"
+      "@babel/plugin-transform-react-constant-elements" "^7.14.5"
+      "@babel/preset-env" "^7.15.6"
+      "@babel/preset-react" "^7.14.5"
+      "@babel/preset-typescript" "^7.15.0"
+      "@svgr/core" "^6.2.1"
+      "@svgr/plugin-jsx" "^6.2.1"
+      "@svgr/plugin-svgo" "^6.2.0"
+  
   "@tootallnate/once@1":
     version "1.1.2"
     resolved "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz"
     integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
+  
+  "@trysound/sax@0.2.0":
+    version "0.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
+    integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
   
   "@types/body-parser@*":
     version "1.19.2"
@@ -1198,6 +1348,14 @@ Lockfile:
       "@types/qs" "*"
       "@types/serve-static" "*"
   
+  "@types/hoist-non-react-statics@^3.3.1":
+    version "3.3.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+    integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
+    dependencies:
+      "@types/react" "*"
+      hoist-non-react-statics "^3.3.0"
+  
   "@types/html-minifier-terser@^6.0.0":
     version "6.1.0"
     resolved "https://registry.npmjs.org/@types/html-minifier-terser/-/html-minifier-terser-6.1.0.tgz"
@@ -1235,6 +1393,16 @@ Lockfile:
     resolved "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz"
     integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
   
+  "@types/parse-json@^4.0.0":
+    version "4.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
+    integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+  
+  "@types/prop-types@*":
+    version "15.7.5"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
+    integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
+  
   "@types/qs@*":
     version "6.9.7"
     resolved "https://registry.npmjs.org/@types/qs/-/qs-6.9.7.tgz"
@@ -1245,10 +1413,24 @@ Lockfile:
     resolved "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz"
     integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
   
+  "@types/react@*":
+    version "18.0.9"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/react/-/react-18.0.9.tgz#d6712a38bd6cd83469603e7359511126f122e878"
+    integrity sha512-9bjbg1hJHUm4De19L1cHiW0Jvx3geel6Qczhjd0qY5VKVE2X5+x77YxAepuCwVh4vrgZJdgEJw48zrhRIeF4Nw==
+    dependencies:
+      "@types/prop-types" "*"
+      "@types/scheduler" "*"
+      csstype "^3.0.2"
+  
   "@types/retry@0.12.0":
     version "0.12.0"
     resolved "https://registry.npmjs.org/@types/retry/-/retry-0.12.0.tgz"
     integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
+  
+  "@types/scheduler@*":
+    version "0.16.2"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
+    integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
   
   "@types/serve-index@^1.9.1":
     version "1.9.1"
@@ -1271,6 +1453,11 @@ Lockfile:
     integrity sha512-f0KEEe05NvUnat+boPTZ0dgaLZ4SfSouXUgv5noUiefG2ajgKjmETo9ZJyuqsl7dfl2aHlLJUiki6B4ZYldiiw==
     dependencies:
       "@types/node" "*"
+  
+  "@types/use-sync-external-store@^0.0.3":
+    version "0.0.3"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
+    integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
   
   "@types/ws@^8.5.1":
     version "8.5.3"
@@ -1845,6 +2032,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/camelcase/-/camelcase-5.3.1.tgz"
     integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
   
+  camelcase@^6.2.0:
+    version "6.3.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
+    integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
+  
   caniuse-lite@^1.0.30001332:
     version "1.0.30001336"
     resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001336.tgz"
@@ -1978,7 +2170,7 @@ Lockfile:
     resolved "https://registry.npmjs.org/commander/-/commander-4.1.1.tgz"
     integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
   
-  commander@^7.0.0:
+  commander@^7.0.0, commander@^7.2.0:
     version "7.2.0"
     resolved "https://registry.npmjs.org/commander/-/commander-7.2.0.tgz"
     integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
@@ -2075,6 +2267,17 @@ Lockfile:
     resolved "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.3.tgz"
     integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
   
+  cosmiconfig@^7.0.1:
+    version "7.0.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/cosmiconfig/-/cosmiconfig-7.0.1.tgz#714d756522cace867867ccb4474c5d01bbae5d6d"
+    integrity sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==
+    dependencies:
+      "@types/parse-json" "^4.0.0"
+      import-fresh "^3.2.1"
+      parse-json "^5.0.0"
+      path-type "^4.0.0"
+      yaml "^1.10.0"
+  
   cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     version "7.0.3"
     resolved "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
@@ -2109,6 +2312,14 @@ Lockfile:
       domutils "^2.8.0"
       nth-check "^2.0.1"
   
+  css-tree@^1.1.2, css-tree@^1.1.3:
+    version "1.1.3"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/css-tree/-/css-tree-1.1.3.tgz#eb4870fb6fd7707327ec95c2ff2ab09b5e8db91d"
+    integrity sha512-tRpdppF7TRazZrjJ6v3stzv93qxRcSsFmW6cX0Zm2NVKpxE1WV1HblnghVv9TreireHkqI/VDEsfolRF1p6y7Q==
+    dependencies:
+      mdn-data "2.0.14"
+      source-map "^0.6.1"
+  
   css-what@^6.0.1:
     version "6.1.0"
     resolved "https://registry.npmjs.org/css-what/-/css-what-6.1.0.tgz"
@@ -2118,6 +2329,18 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
     integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
+  
+  csso@^4.2.0:
+    version "4.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/csso/-/csso-4.2.0.tgz#ea3a561346e8dc9f546d6febedd50187cf389529"
+    integrity sha512-wvlcdIbf6pwKEk7vHj8/Bkc0B4ylXZruLvOgs9doS5eOsOpuodOV2zJChSpkp+pRpYQLQMeF04nr3Z68Sta9jA==
+    dependencies:
+      css-tree "^1.1.2"
+  
+  csstype@^3.0.2:
+    version "3.1.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/csstype/-/csstype-3.1.0.tgz#4ddcac3718d787cf9df0d1b7d15033925c8f29f2"
+    integrity sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==
   
   dashdash@^1.12.0:
     version "1.14.1"
@@ -2157,6 +2380,11 @@ Lockfile:
     version "0.1.4"
     resolved "https://registry.npmjs.org/deep-is/-/deep-is-0.1.4.tgz"
     integrity sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==
+  
+  deepmerge@^4.2.2:
+    version "4.2.2"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+    integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
   
   default-gateway@^6.0.3:
     version "6.0.3"
@@ -2331,6 +2559,11 @@ Lockfile:
     version "2.2.0"
     resolved "https://registry.npmjs.org/entities/-/entities-2.2.0.tgz"
     integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
+  
+  entities@^3.0.1:
+    version "3.0.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/entities/-/entities-3.0.1.tgz#2b887ca62585e96db3903482d336c1006c3001d4"
+    integrity sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==
   
   env-paths@^2.2.0:
     version "2.2.1"
@@ -2689,14 +2922,6 @@ Lockfile:
     dependencies:
       flat-cache "^3.0.4"
   
-  file-loader@^6.2.0:
-    version "6.2.0"
-    resolved "https://registry.npmjs.org/file-loader/-/file-loader-6.2.0.tgz"
-    integrity sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==
-    dependencies:
-      loader-utils "^2.0.0"
-      schema-utils "^3.0.0"
-  
   fill-range@^7.0.1:
     version "7.0.1"
     resolved "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz"
@@ -3051,6 +3276,20 @@ Lockfile:
     resolved "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
     integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
   
+  history@^5.2.0:
+    version "5.3.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
+    integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
+    dependencies:
+      "@babel/runtime" "^7.7.6"
+  
+  hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+    version "3.3.2"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+    integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+    dependencies:
+      react-is "^16.7.0"
+  
   hosted-git-info@^2.1.4:
     version "2.8.9"
     resolved "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.9.tgz"
@@ -3230,6 +3469,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/ignore/-/ignore-5.2.0.tgz"
     integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
   
+  immer@^9.0.7:
+    version "9.0.14"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/immer/-/immer-9.0.14.tgz#e05b83b63999d26382bb71676c9d827831248a48"
+    integrity sha512-ubBeqQutOSLIFCUBN03jGeOS6a3DoYlSYwYJTa+gSKEZKU5redJIqkIdZ3JVv/4RZpfcXdAWH5zCNLWPRv2WDw==
+  
   import-fresh@^3.0.0, import-fresh@^3.2.1:
     version "3.3.0"
     resolved "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz"
@@ -3278,6 +3522,11 @@ Lockfile:
     version "2.0.3"
     resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
     integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
+  
+  install@^0.13.0:
+    version "0.13.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+    integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
   
   internal-slot@^1.0.3:
     version "1.0.3"
@@ -3718,6 +3967,11 @@ Lockfile:
     version "4.3.0"
     resolved "https://registry.npmjs.org/map-obj/-/map-obj-4.3.0.tgz"
     integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
+  
+  mdn-data@2.0.14:
+    version "2.0.14"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
+    integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
   
   media-typer@0.3.0:
     version "0.3.0"
@@ -4269,6 +4523,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz"
     integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
   
+  path-type@^4.0.0:
+    version "4.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
+    integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
+  
   performance-now@^2.1.0:
     version "2.1.0"
     resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
@@ -4463,10 +4722,42 @@ Lockfile:
       loose-envify "^1.1.0"
       scheduler "^0.22.0"
   
-  react-is@^16.13.1:
+  react-is@^16.13.1, react-is@^16.7.0:
     version "16.13.1"
     resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+  
+  react-is@^18.0.0:
+    version "18.1.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/react-is/-/react-is-18.1.0.tgz#61aaed3096d30eacf2a2127118b5b41387d32a67"
+    integrity sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==
+  
+  react-redux@^8.0.1:
+    version "8.0.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/react-redux/-/react-redux-8.0.1.tgz#2bc029f5ada9b443107914c373a2750f6bc0f40c"
+    integrity sha512-LMZMsPY4DYdZfLJgd7i79n5Kps5N9XVLCJJeWAaPYTV+Eah2zTuBjTxKtNEbjiyitbq80/eIkm55CYSLqAub3w==
+    dependencies:
+      "@babel/runtime" "^7.12.1"
+      "@types/hoist-non-react-statics" "^3.3.1"
+      "@types/use-sync-external-store" "^0.0.3"
+      hoist-non-react-statics "^3.3.2"
+      react-is "^18.0.0"
+      use-sync-external-store "^1.0.0"
+  
+  react-router-dom@^6.3.0:
+    version "6.3.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/react-router-dom/-/react-router-dom-6.3.0.tgz#a0216da813454e521905b5fa55e0e5176123f43d"
+    integrity sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==
+    dependencies:
+      history "^5.2.0"
+      react-router "6.3.0"
+  
+  react-router@6.3.0:
+    version "6.3.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/react-router/-/react-router-6.3.0.tgz#3970cc64b4cb4eae0c1ea5203a80334fdd175557"
+    integrity sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==
+    dependencies:
+      history "^5.2.0"
   
   react@^18.1.0:
     version "18.1.0"
@@ -4537,6 +4828,23 @@ Lockfile:
     dependencies:
       indent-string "^4.0.0"
       strip-indent "^3.0.0"
+  
+  redux-persist@^6.0.0:
+    version "6.0.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/redux-persist/-/redux-persist-6.0.0.tgz#b4d2972f9859597c130d40d4b146fecdab51b3a8"
+    integrity sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==
+  
+  redux-thunk@^2.4.1:
+    version "2.4.1"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/redux-thunk/-/redux-thunk-2.4.1.tgz#0dd8042cf47868f4b29699941de03c9301a75714"
+    integrity sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==
+  
+  redux@^4.1.2:
+    version "4.2.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/redux/-/redux-4.2.0.tgz#46f10d6e29b6666df758780437651eeb2b969f13"
+    integrity sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==
+    dependencies:
+      "@babel/runtime" "^7.9.2"
   
   regenerate-unicode-properties@^10.0.1:
     version "10.0.1"
@@ -4657,6 +4965,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
     integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
   
+  reselect@^4.1.5:
+    version "4.1.5"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/reselect/-/reselect-4.1.5.tgz#852c361247198da6756d07d9296c2b51eddb79f6"
+    integrity sha512-uVdlz8J7OO+ASpBYoz1Zypgx0KasCY20H+N8JD13oUMtPvSHQuscrHop4KbXrbsBcdB9Ds7lVK7eRkBIfO43vQ==
+  
   resolve-cwd@^3.0.0:
     version "3.0.0"
     resolved "https://registry.npmjs.org/resolve-cwd/-/resolve-cwd-3.0.0.tgz"
@@ -4757,7 +5070,7 @@ Lockfile:
       ajv "^6.12.4"
       ajv-keywords "^3.5.2"
   
-  schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1:
+  schema-utils@^3.1.0, schema-utils@^3.1.1:
     version "3.1.1"
     resolved "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz"
     integrity sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==
@@ -5052,6 +5365,11 @@ Lockfile:
     dependencies:
       minipass "^3.1.1"
   
+  stable@^0.1.8:
+    version "0.1.8"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
+    integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
+  
   statuses@2.0.1:
     version "2.0.1"
     resolved "https://registry.npmjs.org/statuses/-/statuses-2.0.1.tgz"
@@ -5178,6 +5496,24 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+  
+  svg-parser@^2.0.2:
+    version "2.0.4"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/svg-parser/-/svg-parser-2.0.4.tgz#fdc2e29e13951736140b76cb122c8ee6630eb6b5"
+    integrity sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==
+  
+  svgo@^2.5.0:
+    version "2.8.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/svgo/-/svgo-2.8.0.tgz#4ff80cce6710dc2795f0c7c74101e6764cfccd24"
+    integrity sha512-+N/Q9kV1+F+UeWYoSiULYo4xYSDQlTgb+ayMobAXPwMnLvop7oxKMo9OzIrX5x3eS4L4f2UHhc9axXwY8DpChg==
+    dependencies:
+      "@trysound/sax" "0.2.0"
+      commander "^7.2.0"
+      css-select "^4.1.3"
+      css-tree "^1.1.3"
+      csso "^4.2.0"
+      picocolors "^1.0.0"
+      stable "^0.1.8"
   
   tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
     version "2.2.1"
@@ -5381,6 +5717,11 @@ Lockfile:
     integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
     dependencies:
       punycode "^2.1.0"
+  
+  use-sync-external-store@^1.0.0:
+    version "1.1.0"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/use-sync-external-store/-/use-sync-external-store-1.1.0.tgz#3343c3fe7f7e404db70f8c687adf5c1652d34e82"
+    integrity sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==
   
   util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
     version "1.0.2"
@@ -5646,6 +5987,11 @@ Lockfile:
     version "4.0.0"
     resolved "https://registry.npmjs.org/yallist/-/yallist-4.0.0.tgz"
     integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
+  
+  yaml@^1.10.0:
+    version "1.10.2"
+    resolved "https://platform-ui-859384256676.d.codeartifact.us-east-1.amazonaws.com:443/npm/platform-ui/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
+    integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
   
   yargs-parser@^20.2.3:
     version "20.2.9"
