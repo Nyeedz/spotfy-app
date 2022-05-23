@@ -1,15 +1,17 @@
+import { useDebounce } from '@utils/useDebounce'
 import { func } from 'prop-types'
 import { useState } from 'react'
 import './input'
 
 const Input = ({ onChangeValue }) => {
   const [inputValue, setInputValue] = useState('')
+  const debouncedChange = useDebounce(onChangeValue, 600)
 
   const onChange = (event) => {
     const value = event.target.value
 
     setInputValue(value)
-    onChangeValue(value)
+    debouncedChange(value)
   }
 
   return (
@@ -31,8 +33,8 @@ const Input = ({ onChangeValue }) => {
   )
 }
 
+export default Input
+
 Input.prototype = {
   onChangeValue: func
 }
-
-export default Input

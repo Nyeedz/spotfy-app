@@ -23,7 +23,8 @@ module.exports = {
       '@components': path.resolve(__dirname + '/src/Components'),
       '@environment': path.resolve(__dirname + '/environment'),
       '@images': path.resolve(__dirname + '/public/img'),
-      '@redux': path.resolve(__dirname + '/src/redux')
+      '@redux': path.resolve(__dirname + '/src/redux'),
+      '@utils': path.resolve(__dirname + '/src/utils')
     }
   },
   devServer: {

@@ -8,18 +8,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import './albumsPage'
 
 const AlbumsPage = () => {
-  const [timeout, setTimeOut] = useState(null)
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState(null)
 
-  const tokenSelector = useSelector((state) => state.token)
-  const albumsSelector = useSelector((state) => state.albums)
-  const tracksSelector = useSelector((state) => state.tracks)
+  const { token } = useSelector((state) => state.token)
+  const { albums } = useSelector((state) => state.albums)
+  const { tracks } = useSelector((state) => state.tracks)
+
   const dispatch = useDispatch()
 
   const getAlbums = () => {
     fetch(`${config.baseUrl}/me/albums`, {
       headers: {
-        Authorization: `Bearer ${tokenSelector?.token}`
+        Authorization: `Bearer ${token}`
       }
     })
       .then((res) => res.json())
@@ -33,77 +33,49 @@ const AlbumsPage = () => {
       })
   }
 
-  useEffect(() => {
-    clearState()
-    getAlbums()
-  }, [])
-
   const onChange = (e) => {
-    clearTimeout(timeout)
-
     if (e.length === 0) {
       clearState()
       getAlbums()
-    } else {
-      setInputValue(e)
-      setTimeOut(
-        setTimeout(() => {
-          fetch(`${config.baseUrl}/search?q=${e}&type=album,track`, {
-            headers: {
-              Authorization: `Bearer ${tokenSelector?.token}`
-            }
-          })
-            .then((res) => res.json())
-            .then((res) => {
-              dispatch(setAlbums(res.albums.items))
-              dispatch(setTracks(res.tracks.items))
-            })
-        }, 600)
-      )
     }
+
+    setInputValue(e)
+    fetch(`${config.baseUrl}/search?q=${e}&type=album,track`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        dispatch(setAlbums(res.albums.items))
+        dispatch(setTracks(res.tracks.items))
+      })
   }
 
   const clearState = () => {
     dispatch(setAlbums([]))
     dispatch(setTracks([]))
-    setInputValue('')
+    setInputValue(null)
   }
+
+  useEffect(() => {
+    clearState()
+    getAlbums()
+  }, [])
 
   return (
     <>
       <div className="container">
         <Input onChangeValue={onChange} />
-
-        {/* {queryAlbum && (
+        {inputValue && (
           <div className="search">
             <h3 className="search__title">
               Álbums encontrados para {`"${inputValue}"`}
             </h3>
-            <div className="container container--grid">
-              {queryAlbum.map((album) => {
-                return (
-                  <Album
-                    key={album.id}
-                    id={album.id}
-                    cover={album.images[0].url}
-                    artist={album.artists[0].name}
-                    title={album.name}
-                  />
-                )
-              })}
-            </div>
           </div>
-        )} */}
-
+        )}
         <div className="container container--grid">
-          {inputValue !== '' && !timeout && (
-            <div className="search">
-              <h3 className="search__title">
-                Álbums encontrados para {`"${inputValue}"`}
-              </h3>
-            </div>
-          )}
-          {albumsSelector?.albums?.map((album) => {
+          {albums?.map((album) => {
             return (
               <Album
                 key={album.id}
@@ -115,14 +87,13 @@ const AlbumsPage = () => {
             )
           })}
         </div>
-
-        {tracksSelector?.tracks?.length > 0 && (
+        {tracks?.length > 0 && (
           <div className="search">
             <h3 className="search__title">
               Músicas encontradas para {`"${inputValue}"`}
             </h3>
             <div className="container container--grid">
-              {tracksSelector.tracks.map((track) => {
+              {tracks.map((track) => {
                 return (
                   <Album
                     key={track.album.id}
