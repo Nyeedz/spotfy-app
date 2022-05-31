@@ -1,6 +1,6 @@
 import { useDebounce } from '@utils/useDebounce'
 import { func } from 'prop-types'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import './input'
 
 const Input = ({ onChangeValue }) => {
@@ -15,8 +15,8 @@ const Input = ({ onChangeValue }) => {
   }
 
   return (
-    <div className="floating-input">
-      <label className="floating-input__label" htmlFor="search">
+    <div className="input">
+      <label className="input__label" htmlFor="search">
         Busque por artistas, álbuns ou músicas
       </label>
       <input
@@ -25,7 +25,7 @@ const Input = ({ onChangeValue }) => {
         id="search"
         name="search"
         value={inputValue}
-        className="floating-input__field"
+        className="input__field"
         placeholder="Comece a escrever..."
         required
       />
@@ -33,7 +33,7 @@ const Input = ({ onChangeValue }) => {
   )
 }
 
-export default Input
+export default memo(Input)
 
 Input.prototype = {
   onChangeValue: func

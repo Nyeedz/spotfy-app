@@ -1,4 +1,5 @@
 import { string } from 'prop-types'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import './album'
 
@@ -26,4 +27,4 @@ Album.propTypes = {
   title: string
 }
 
-export default Album
+export default memo(Album)

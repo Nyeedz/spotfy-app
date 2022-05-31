@@ -1,7 +1,7 @@
 import Album from '@components/Album'
 import config from '@environment/config'
 import ArrowBack from '@images/arrow-back.svg'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import './albumPage'
@@ -21,7 +21,9 @@ const AlbumPage = () => {
   useEffect(() => {
     fetch(`${config.baseUrl}/albums/${id}`, {
       headers: {
-        Authorization: `Bearer ${selector?.token}`
+        Authorization: `Bearer ${
+          selector?.token ? selector?.token : localStorage.getItem('token')
+        }`
       }
     })
       .then((res) => res.json())
@@ -59,4 +61,4 @@ const AlbumPage = () => {
   )
 }
 
-export default AlbumPage
+export default memo(AlbumPage)

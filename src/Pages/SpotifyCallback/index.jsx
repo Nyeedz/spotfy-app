@@ -9,8 +9,11 @@ const SpotifyCallback = () => {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(`?${window.location.hash.slice(1)}`)
+    const token = urlParams.get('access_token')
+    const storageToken = localStorage.getItem('token')
 
-    dispatch(setToken(urlParams.get('access_token')))
+    dispatch(setToken(token ? token : storageToken))
+    localStorage.setItem('token', token ? token : storageToken)
     navigate('/')
   }, [])
   return <></>

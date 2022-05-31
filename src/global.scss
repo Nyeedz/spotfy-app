@@ -18,10 +18,9 @@ body {
 
   &--grid {
     display: grid;
-    grid-template: 1fr / repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 16px;
     padding: 0;
-    margin-top: 92px;
-    gap: 32px 80px;
-    place-items: stretch;
+    margin-top: 64px;
   }
 }
