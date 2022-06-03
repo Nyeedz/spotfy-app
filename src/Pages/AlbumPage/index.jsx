@@ -1,5 +1,4 @@
 import Album from '@components/Album'
-import config from '@environment/config'
 import ArrowBack from '@images/arrow-back.svg'
 import { memo, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
@@ -16,14 +15,12 @@ const AlbumPage = () => {
     const seconds = ((duration % 60000) / 1000).toFixed(0)
     return minutes + ':' + (seconds < 10 ? '0' : '') + seconds
   }
-  const selector = useSelector((state) => state.token)
+  const { token } = useSelector((state) => state.token)
 
   useEffect(() => {
-    fetch(`${config.baseUrl}/albums/${id}`, {
+    fetch(`${process.env.baseUrl}/albums/${id}`, {
       headers: {
-        Authorization: `Bearer ${
-          selector?.token ? selector?.token : localStorage.getItem('token')
-        }`
+        Authorization: `Bearer ${token ? token : localStorage.getItem('token')}`
       }
     })
       .then((res) => res.json())

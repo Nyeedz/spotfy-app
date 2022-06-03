@@ -5,7 +5,7 @@ import './input'
 
 const Input = ({ onChangeValue }) => {
   const [inputValue, setInputValue] = useState('')
-  const debouncedChange = useDebounce(onChangeValue, 600)
+  const debouncedChange = useDebounce(onChangeValue, 700)
 
   const onChange = (event) => {
     const value = event.target.value

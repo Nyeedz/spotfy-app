@@ -1,6 +1,5 @@
 import Album from '@components/Album'
 import Input from '@components/Input'
-import config from '@environment/config'
 import { setAlbums } from '@redux/albumsSlice'
 import { setTracks } from '@redux/tracksSlice'
 import { useCallback, useEffect, useState } from 'react'
@@ -20,7 +19,7 @@ const AlbumsPage = () => {
 
   const getAlbums = () => {
     setLoading(true)
-    fetch(`${config.baseUrl}/me/albums`, {
+    fetch(`${process.env.baseUrl}/me/albums`, {
       headers: {
         Authorization: `Bearer ${storageToken ? storageToken : token}`
       }
@@ -33,14 +32,14 @@ const AlbumsPage = () => {
       })
       .catch(() => {
         localStorage.removeItem('token')
-        window.location.href = `https://accounts.spotify.com/authorize?client_id=${config.clientId}&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=${config.urlCallback}`
+        window.location.href = `https://accounts.spotify.com/authorize?client_id=${process.env.clientId}&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=token&redirect_uri=${process.env.urlCallback}`
       })
       .finally(() => setLoading(false))
   }
 
   const getTracks = (event) => {
     setLoading(true)
-    fetch(`${config.baseUrl}/search?q=${event}&type=album,track`, {
+    fetch(`${process.env.baseUrl}/search?q=${event}&type=album,track`, {
       headers: {
         Authorization: `Bearer ${storageToken ? storageToken : token}`
       }
@@ -57,10 +56,11 @@ const AlbumsPage = () => {
     if (event.length === 0) {
       clearState()
       getAlbums()
+    } else {
+      getTracks(event)
     }
 
     setInputValue(event)
-    getTracks(event)
   })
 
   const clearState = () => {
@@ -88,10 +88,10 @@ const AlbumsPage = () => {
           {loading && !inputValue && (
             <h1 style={{ color: '#fff' }}>Loading...</h1>
           )}
-          {albums?.map((album) => {
+          {albums?.map((album, index) => {
             return (
               <Album
-                key={album.id + album.uri}
+                key={album.id + album.uri + index}
                 id={album.id}
                 cover={album.images[0].url}
                 artist={album.artists[0].name}
@@ -108,10 +108,10 @@ const AlbumsPage = () => {
               {inputValue && `Músicas encontradas para "${inputValue}"`}
             </h3>
             <div className="container container--grid">
-              {tracks.map((track) => {
+              {tracks.map((track, index) => {
                 return (
                   <Album
-                    key={track.album.id}
+                    key={track.album.id + track.album.uri + index}
                     id={track.album.id}
                     cover={track.album.images[0].url}
                     artist={track.album.artists[0].name}

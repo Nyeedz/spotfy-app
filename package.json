@@ -1,14 +1,13 @@
 {
-  "name": "xp-spotify-challenge",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Christian Alex Fernandes Barbosa <chr.alexfb@gmail.com>",
+  "private": true,
   "scripts": {
-    "start": "webpack serve  --hot",
-    "build": "webpack --config webpack.config.js --mode production",
-    "lint": "eslint ."
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:dev": "webpack",
+    "lint": "eslint .",
+    "test": "jest"
   },
-  "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.17.10",
     "@reduxjs/toolkit": "^1.8.1",
@@ -19,12 +18,17 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.16.7",
     "@svgr/webpack": "^6.2.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "babel-jest": "^28.1.0",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^7.1.0",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

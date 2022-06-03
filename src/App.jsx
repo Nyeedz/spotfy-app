@@ -10,8 +10,8 @@ const App = () => (
     <SpotifyLogo className="logo" />
     <Routes>
       <Route path="/" element={<AlbumsPage />} />
-      <Route path="/album/:id" element={<AlbumPage />} />
-      <Route path="/callback" element={<SpotifyCallback />} />
+      <Route path="album/:id" element={<AlbumPage />} />
+      <Route path="callback" element={<SpotifyCallback />} />
     </Routes>
   </Router>
 )

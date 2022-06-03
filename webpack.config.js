@@ -1,13 +1,32 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
+let mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+
 module.exports = {
+  mode,
   entry: './src/index.jsx',
-  mode: 'development',
   output: {
     filename: 'bundle.[fullhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      },
+      {
+        test: /\.(jsx?|js?)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,7 +40,6 @@ module.exports = {
     alias: {
       '@pages': path.resolve(__dirname + '/src/Pages'),
       '@components': path.resolve(__dirname + '/src/Components'),
-      '@environment': path.resolve(__dirname + '/environment'),
       '@images': path.resolve(__dirname + '/public/img'),
       '@redux': path.resolve(__dirname + '/src/redux'),
       '@utils': path.resolve(__dirname + '/src/utils')
@@ -31,21 +49,5 @@ module.exports = {
     historyApiFallback: true,
     port: 3000
   },
-  module: {
-    rules: [
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack']
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: require.resolve('babel-loader')
-      },
-      {
-        test: /\.(scss|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
-  }
+  devtool: 'source-map'
 }
